@@ -12,7 +12,7 @@ def index():
     from .models import Entry
     main_entry = Entry.query.order_by(Entry.id).first()
     print(main_entry)
-    return jsonify(main_entry.data)
+    return jsonify(main_entry.content)
 
 
 DB_URI = app.config['SQLALCHEMY_DATABASE_URI']

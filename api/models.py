@@ -6,13 +6,13 @@ import re
 class Entry(Base):
     __tablename__ = 'posts'
     id = Column(Integer, primary_key=True)
-    data = Column(Text)
+    content = Column(Text)
 
-    def __init__(self, data):
-        self.data = data
+    def __init__(self, content):
+        self.content = content
         # self.title = title
         # self.summary = summary
         # self.slug = re.sub('[^\w]+', '_', self.title.lower())
 
     def __repr__(self):
-        return '<Entry %r>' % self.data
+        return '<Entry %r>' % self.content
