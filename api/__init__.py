@@ -15,5 +15,5 @@ def index():
     return jsonify(main_entry.content)
 
 
-DB_URI = app.config['SQLALCHEMY_DATABASE_URI']
+DB_URI = app.config['SQLALCHEMY_DATABASE_URI'].replace('postgres://', 'postgresql://')
 engine = create_engine(DB_URI)
